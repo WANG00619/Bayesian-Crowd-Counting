@@ -1,0 +1,8 @@
+# other pathes
+ckpts/
+__pycache__/
+.idea/
+.vscode/
+
+# compile files
+*.__pyc

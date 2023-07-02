@@ -6,7 +6,7 @@ args = None
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train ')
-    parser.add_argument('--data-dir', default='/home/chuanzhi/mnt_2T/wz/datasets/shrimp/forDM',
+    parser.add_argument('--data-dir', default='/home/chuanzhi/mnt_2T/wz/datasets/shrimp/forBL',
                         help='training data directory')
     parser.add_argument('--save-dir', default='./ckpts/',
                         help='directory to save models.')
