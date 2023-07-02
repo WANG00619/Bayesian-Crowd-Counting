@@ -6,11 +6,10 @@ args = None
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train ')
-    parser.add_argument('--data-dir', default='/home/teddy/UCF-Train-Val-Test',
+    parser.add_argument('--data-dir', default='/home/chuanzhi/mnt_2T/wz/datasets/shrimp/forDM',
                         help='training data directory')
-    parser.add_argument('--save-dir', default='/home/teddy/vgg',
+    parser.add_argument('--save-dir', default='./ckpts/',
                         help='directory to save models.')
-
     parser.add_argument('--lr', type=float, default=1e-5,
                         help='the initial learning rate')
     parser.add_argument('--weight-decay', type=float, default=1e-4,
@@ -19,17 +18,17 @@ def parse_args():
                         help='the path of resume training model')
     parser.add_argument('--max-model-num', type=int, default=1,
                         help='max models num to save ')
-    parser.add_argument('--max-epoch', type=int, default=1000,
+    parser.add_argument('--max-epoch', type=int, default=300,
                         help='max training epoch')
     parser.add_argument('--val-epoch', type=int, default=5,
                         help='the num of steps to log training information')
-    parser.add_argument('--val-start', type=int, default=600,
+    parser.add_argument('--val-start', type=int, default=0,
                         help='the epoch start to val')
 
     parser.add_argument('--batch-size', type=int, default=1,
                         help='train batch size')
     parser.add_argument('--device', default='0', help='assign device')
-    parser.add_argument('--num-workers', type=int, default=8,
+    parser.add_argument('--num-workers', type=int, default=16,
                         help='the num of training process')
 
     parser.add_argument('--is-gray', type=bool, default=False,

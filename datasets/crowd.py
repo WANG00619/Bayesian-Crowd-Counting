@@ -63,14 +63,14 @@ class Crowd(data.Dataset):
         img = Image.open(img_path).convert('RGB')
         if self.method == 'train':
             keypoints = np.load(gd_path)
-            return self.train_transform(img, keypoints)
+            return self.train_transform(img, keypoints, img_path)
         elif self.method == 'val':
             keypoints = np.load(gd_path)
             img = self.trans(img)
             name = os.path.basename(img_path).split('.')[0]
             return img, len(keypoints), name
 
-    def train_transform(self, img, keypoints):
+    def train_transform(self, img, keypoints, img_path):
         """random crop image patch and find people in it"""
         wd, ht = img.size
         st_size = min(wd, ht)
